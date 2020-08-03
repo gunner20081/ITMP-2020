@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab - Multimedia Programming 2563 ITKMITL</title>
+	<link rel=stylesheet href="../src/reset.css">
+	<link rel=stylesheet href="lab.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body class="paper">
+	<div id="app">
+		<input type="number" v-model="number">
+		<div class="space"></div>
+		<h4>{{number}} x 1 = {{total_1}}</h4>
+		<h4>{{number}} x 2 = {{total_2}}</h4>
+		<h4>{{number}} x 3 = {{total_3}}</h4>
+		<h4>{{number}} x 4 = {{total_4}}</h4>
+		<h4>{{number}} x 5 = {{total_5}}</h4>
+		<h4>{{number}} x 6 = {{total_6}}</h4>
+		<h4>{{number}} x 7 = {{total_7}}</h4>
+		<h4>{{number}} x 8 = {{total_8}}</h4>
+		<h4>{{number}} x 9 = {{total_9}}</h4>
+		<h4>{{number}} x 10 = {{total_10}}</h4>
+		<h4>{{number}} x 11 = {{total_11}}</h4>
+		<h4>{{number}} x 12 = {{total_12}}</h4>
+	</div>
+
+	<script>
+		let app = new Vue({
+			el: '#app',
+			data: {
+				number: 2
+			},
+			computed: {
+				total_1 : function (){
+					return this.number*1
+				},
+				total_2 : function (){
+					return this.number*2
+				},
+				total_3 : function (){
+					return this.number*3
+				},
+				total_4 : function (){
+					return this.number*4
+				},
+				total_5 : function (){
+					return this.number*5
+				},
+				total_6 : function (){
+					return this.number*6
+				},
+				total_7 : function (){
+					return this.number*7
+				},
+				total_8 : function (){
+					return this.number*8
+				},
+				total_9 : function (){
+					return this.number*9
+				},
+				total_10 : function (){
+					return this.number*10
+				},
+				total_11 : function (){
+					return this.number*11
+				},
+				total_12 : function (){
+					return this.number*12
+				},
+			}
+		})
+	</script>
+</body>
+</html>
