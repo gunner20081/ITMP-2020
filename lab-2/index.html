@@ -8,6 +8,7 @@
 </head>
 <body>
 	<div id="app">
+		<h2 v-for="u in users">{{u.username}}</h2>
 		
 	</div>
 	
@@ -16,12 +17,21 @@
 		fetch('https://jsonplaceholder.typicode.com/users')
 		.then(response => response.json())
 		.then(json => {console.log(json)})
+
 		let app = new Vue({
 			el: '#app',
 			data: {
-				users :[],
+				users :[{
+					"id":1,
+					name:'..loading',
+					username:'..loading',
+					email:'..loading',
+					website:'..loading',
+					company:{
+						name : '..loading',"
+				}],
 				person:{
-					id:0,
+					id:1,
 					name:'..loading',
 					username:'..loading',
 					email:'..loading',
