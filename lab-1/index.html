@@ -1,82 +1,61 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Lab - Multimedia Programming 2563 ITKMITL</title>
-	<link rel=stylesheet href="../src/reset.css">
-	<link rel=stylesheet href="lab.css">
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>Lab - Multimedia Programming 2563 ITKMITL</title>
+  <link rel=stylesheet href="../src/reset.css">
+  <link rel=stylesheet href="lab.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
+
 <body class="paper">
-	<div id="app">
-		<input type="number"  v-model="o">
-		<input type="number"  v-model="row">
-		<div class="space"></div>
-		<h3>สูตรคูณแม่{{o}}</h3>
-		<h5 class="row">แม่ก่อนหน้า -> แมร่ง {{before_o}}</h5>
-		<h4
-		v-for="i in row"
-		>{{o}} x {{i}} = {{x(i)}}</h4>
-		
-	</div>
+  <div id="app">
+    <p>สูตรคุณแม่ {{n}}</p>
+    <input type="number" v-on:click="negCheck" v-model="n">
+    <input type="number" v-on:click="negCheck" v-model="r">
+    <ul>
+      <span v-for="(item, index) in ans">
+        {{n}} x {{index}} = {{item}}<br>
+      </span>
+    </ul>
+  </div>
 
-	<script>
-		let app = new Vue({
-			el: '#app',
-			data: {
-				o: 2,
-				before_o:1,
-				row:12
-			},
-			methods:{
-				x: function(row){
-					return this.o*row
-				}
-			},
-			computed: {
-				r: function(){
-					return parseInt(this.row)
-				},
-				x2: function(){
-					return this.o*2
-				},
-				x3: function(){
-					return this.o*3
-				},
-				x4: function(){
-					return this.o*4
-				},
-				x5: function(){
-					return this.o*5
-				},
-				x6: function(){
-					return this.o*6
-				},
-				x7: function(){
-					return this.o*7
-				},
-				x8: function(){
-					return this.o*8
-				},
-				x9: function(){
-					return this.o*9
-				},
-				x10: function(){
-					return this.o*10
-				},
-				x11: function(){
-					return this.o*11
-				},
-				x12: function(){
-					return this.o*12
-				}
-			},
-			watch:{
-				o:function(a,b){
-					this.before_o = b
+  <script>
+    let app = new Vue({
+      el: '#app',
+      data: {
+        n: 0,
+        r: 0,
+        ans: []
+      },
+      methods: {
+        negCheck(){
+          if (this.n>=0 && this.r>=0){
+            this.posCalculate()
+          }
+          else{this.negCalculate()}
+        },
+        posCalculate() {
+          tempAns = [];
+          // if pos or neg
+          for (i = 0; i <= this.r; i++) {
+            tempAns.push(parseInt(this.n) * parseInt(i));
+          }
+          this.ans = tempAns;
+        },
+        negCalculate() {
+          tempAns = [];
+          // if pos or neg
+          for (i = 0; i < this.r; i++) {
+            tempAns.push(parseInt(this.n) * parseInt(i));
+          }
+          this.ans = tempAns;
+        }
+      }
+    })
 
-				}
-			}
-		});
-	</script>
+
+  </script>
 </body>
+
 </html>
